@@ -1,0 +1,449 @@
+#app {
+  --color1: rgb(60 60 67/ 2%);
+  --color2: rgb(203 203 203 / 30%);
+  --textColor: #333;
+  --mediaItemShadow-Shadow: 4px 4px 4px rgba(0, 0, 0, 0.15);
+  --mediaItemShadow-ShadowSubtle: 0 4px 4px rgba(0, 0, 0, 0.1);
+  --ciderShadow-Generic: var(--mediaItemShadow), 0 8px 8px rgb(0 0 0 / 0.15);
+  color: #333;
+  &.simplebg {
+    background: #eee;
+  }
+}
+
+
+.md-btn{
+  &.md-btn-primary{
+    background: #d60017;
+  }
+}
+
+.md-btn, .md-select {
+  color: #333;
+
+  &:not(.md-btn-primary) {
+    background: #eee;
+    border: 1px solid rgb(100 100 100 / 20%);
+  }
+
+  .md-ico-remove {
+    filter: invert(0.8);
+  }
+
+  .md-ico-add {
+    filter: invert(0.8);
+  }
+
+  > option, > optgroup, optgroup > option {
+    background: #eee;
+  }
+
+
+}
+
+.list-group-item-dark {
+  color: #eee;
+}
+
+// Only changing the CSS for the main window
+#app-main {
+
+  background-color: whitesmoke;
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: 6px solid transparent;
+    box-shadow: inset 0px 0px 10px 10px rgb(20 20 20 / 50%);
+    border-radius: 16px;
+    min-height: 64px;
+    transition: border 1s;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    border: 5px solid transparent;
+    box-shadow: inset 0px 0px 10px 10px rgb(10 10 10 / 80%);
+  }
+
+
+
+
+  #navigation-bar {
+    background: rgb(255 255 255 / 30%);
+    mix-blend-mode: unset;
+
+    .nav-item > svg {
+      color: #d60017;
+    }
+  }
+
+  .app-sidebar-item {
+    color: var(--textColor);
+
+    &.active {
+      background: rgb(0 0 0 / 10%)
+    }
+
+    .sidebar-icon > svg {
+      color: #d60017;
+    }
+  }
+  .app-chrome{
+    background: whitesmoke;
+    border: 0px;
+    border-bottom: rgba(0,0,0,0.2) 1px;
+    border-style: solid;
+  }
+
+  .app-chrome .app-chrome-item > .app-playback-controls {
+    border: solid darkgray;
+    border-width: 1.5px;
+    .artwork{
+      width: 55px;
+      height: 55px;
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      border-radius: 0px;
+      .mediaitem-artwork{
+        border-radius: 0px;
+      }
+    }
+    .song-progress{
+      bottom: -4px;
+      right: 1px;
+      z-index: 30;
+      input[type="range"]{
+        border-radius: 0px;
+      }
+      .song-duration{
+        margin-left: 2px;
+        margin-right: 2px;}
+    }  
+    .actions{
+      display: none;
+    }
+  }
+
+
+  .mediaitem-card {
+    .subtitle {
+      color: #eee;
+    }
+  }
+
+  .playback-button,.playback-button--small,.volume-button--small, .app-chrome-item>input[type="range"] {
+    filter: invert(1);
+  }
+
+  // #window-controls-container {
+  //   filter: invert(1);
+  //   .close:hover{
+  //     background-color: #c42b1c;
+  //     filter: invert(1);
+  //   }
+  // }
+
+  .app-chrome .app-chrome-item > .app-mainmenu {
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MyIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDgzIDIwIiB2ZXJzaW9uPSIxLjEiIGNsYXNzPSJ3ZWItbmF2aWdhdGlvbl9fbG9nby12ZWN0b3IiIHJvbGU9InByZXNlbnRhdGlvbiI+PHBhdGggZmlsbC1ydWxlPSJub256ZXJvIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZD0iTTM0Ljc1MiAxOS43NDZWNi4yNDNoLS4wODhsLTUuNDMzIDEzLjUwM2gtMi4wNzRMMjEuNzExIDYuMjQzaC0uMDg3djEzLjUwM2gtMi41NDhWMS4zOTloMy4yMzVsNS44MzMgMTQuNjIxaC4xTDM0LjA2NCAxLjRoMy4yNDh2MTguMzQ3aC0yLjU2em0xNi42NDkgMGgtMi41ODZ2LTIuMjYzaC0uMDYyYy0uNzI1IDEuNjAyLTIuMDYxIDIuNTA0LTQuMDcyIDIuNTA0LTIuODYgMC00LjYxLTEuODk0LTQuNjEtNC45NThWNi4zN2gyLjY5OHY4LjEyNWMwIDIuMDM0Ljk1IDMuMTI3IDIuODEgMy4xMjcgMS45NSAwIDMuMTI0LTEuMzczIDMuMTI0LTMuNDU4VjYuMzdINTEuNHYxMy4zNzZ6bTcuMzk0LTEzLjYxOGMzLjA2IDAgNS4wNDYgMS43MyA1LjEzNCA0LjE5NmgtMi41MzZjLS4xNS0xLjI5Ni0xLjA4Ny0yLjExLTIuNTk4LTIuMTEtMS40NjIgMC0yLjQzNi43MjQtMi40MzYgMS43OTMgMCAuODM5LjYgMS40MSAyLjAyMyAxLjc0MWwyLjEzNi40OTZjMi42ODYuNjM2IDMuNzEgMS43MDQgMy43MSAzLjYzNiAwIDIuNDQyLTIuMjM2IDQuMTItNS4zMzMgNC4xMi0zLjI4NSAwLTUuMjYtMS42NC01LjUwOS00LjE4M2gyLjY3M2MuMjUgMS4zOTggMS4xODcgMi4wODUgMi44MzYgMi4wODUgMS42MjMgMCAyLjYyMy0uNjg3IDIuNjIzLTEuNzggMC0uODY1LS40ODctMS4zNzMtMS45MjQtMS43MDRsLTIuMTM2LS41MDhjLTIuNDk4LS41ODUtMy43MzUtMS44MDYtMy43MzUtMy43NSAwLTIuMzkxIDIuMDQ5LTQuMDMyIDUuMDcyLTQuMDMyek02Ni4xIDIuODM2YzAtLjg3OC43LTEuNTc3IDEuNTYxLTEuNTc3Ljg2MiAwIDEuNTUuNyAxLjU1IDEuNTc3IDAgLjg2NC0uNjg4IDEuNTc2LTEuNTUgMS41NzZhMS41NzMgMS41NzMgMCAwIDEtMS41Ni0xLjU3NnptLjIxMiAzLjUzNGgyLjY5OHYxMy4zNzZoLTIuNjk4VjYuMzd6bTE0LjA4OSA0LjYwM2MtLjI3NS0xLjQyNC0xLjMyNC0yLjU1Ni0zLjA4NS0yLjU1Ni0yLjA4NiAwLTMuNDYgMS43NjctMy40NiA0LjY0IDAgMi45MzggMS4zODYgNC42NDIgMy40ODUgNC42NDIgMS42NiAwIDIuNzQ4LS45MjggMy4wNi0yLjQ4SDgzQzgyLjcxMyAxOC4wNjcgODAuNDc3IDIwIDc3LjMxNyAyMGMtMy43NiAwLTYuMjA4LTIuNjItNi4yMDgtNi45NDIgMC00LjI0NyAyLjQ0OC02LjkzIDYuMTgzLTYuOTMgMy4zODUgMCA1LjQ0NiAyLjIxMyA1LjY4MyA0Ljg0NWgtMi41NzN6TTEwLjgyNCAzLjE4OWMtLjY5OC44MzQtMS44MDUgMS40OTYtMi45MTMgMS4zOTgtLjE0NS0xLjEyOC40MS0yLjMzIDEuMDM2LTMuMDY1QzkuNjQ0LjY2MiAxMC44NDguMDUgMTEuODM1IDBjLjEyMSAxLjE3OC0uMzM2IDIuMzMtMS4wMSAzLjE5em0uOTk5IDEuNjE5Yy42MjQuMDQ5IDIuNDI1LjI0NCAzLjU3OCAxLjk4LS4wOTYuMDc0LTIuMTM3IDEuMjcyLTIuMTEzIDMuNzkuMDI0IDMuMDEgMi41OTMgNC4wMTIgMi42MTcgNC4wMzctLjAyNC4wNzQtLjQwNyAxLjQxOS0xLjM0NCAyLjgxMi0uODE3IDEuMjI0LTEuNjU3IDIuNDIyLTMuMDAyIDIuNDQ3LTEuMjk3LjAyNC0xLjczLS43ODMtMy4yMTgtLjc4My0xLjQ4OSAwLTEuOTcuNzU4LTMuMTk0LjgwNy0xLjI5Ny4wNDgtMi4yOC0xLjI5Ny0zLjA5Ny0yLjUyQy4zNjggMTQuOTA4LS45MDQgMTAuNDA4LjgyNSA3LjM3NWMuODQtMS41MTYgMi4zNzctMi40NyA0LjAzNC0yLjQ5NSAxLjI3My0uMDIzIDIuNDUuODU3IDMuMjE4Ljg1Ny43NjkgMCAyLjEzNy0xLjAyNyAzLjc0Ni0uOTN6Ij48L3BhdGg+PC9zdmc+');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .artist-page {
+    .artist-title {
+      color: var(--textColor);
+    }
+
+    .floating-header {
+      background: #eee9;
+      color: var(--textColor);
+    }
+  }
+
+  .playlist-page {
+    .floating-header {
+      background: #eee9;
+      color: var(--textColor);
+    }
+  }
+
+
+  .app-drawer {
+    background: #eee;
+    color: var(--textColor);
+  }
+
+  .lyric-line {
+    color: #333;
+  }
+
+  &.modular-fs  .lyric-line {
+    color: whitesmoke;
+  }
+
+  .infinity {
+    filter: invert(0.8);
+  }
+
+  .playlist-page.inline-playlist .playlist-inner {
+    z-index: 30;
+    background: #eee;
+
+    .floating-header {
+      background: #eee;
+    }
+  }
+
+  .app-navigation{
+    #app-content{
+      background: white;
+      border-radius: 0px 0px 0px 0px;
+
+      .library-page .library-header{
+        background: unset;
+      }
+      .content-inner.podcasts-page .podcasts-list .podcasts-search {
+        background: rgba(0,0,0,0.01);
+      }
+    }
+  }
+}
+
+.mini-view .artwork-col .app-playback-controls .playback-info > div {
+  color: white;
+}
+
+.more-btn-round {
+  box-shadow: var(--mediaItemShadow);
+}
+
+.cd-mediaitem-square.mediaitem-card .info-rect-card {
+  color: white
+}
+
+.cd-mediaitem-list-item:nth-child(odd){
+  background: rgb(0 0 0 / 0.01);
+}
+
+.app-chrome .app-chrome-item.volume input[type="range"] {
+  filter: invert(0) !important;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.app-chrome .app-chrome-item.volume button {
+  filter: invert(0.6);
+}
+
+
+body .app-chrome .app-chrome-item > .window-controls {
+  width: 67px;
+}
+
+body .app-chrome .app-chrome-item > .window-controls > div.minmax {
+  height: 12px;
+  width: 12px;
+  background-color: #00ca56;
+  border-radius: 50%;
+  margin: 0px;
+  -webkit-app-region: no-drag;
+  background-image: unset;
+  position: absolute;
+  right: 49px;
+  top: 50%;
+  transform: translate(0, -50%);
+  .restore{
+    background-image: unset;
+  }
+}
+
+body .app-chrome .app-chrome-item > .window-controls > div.minimize {
+  height: 12px;
+  width: 12px;
+  background-color: rgb(255, 189, 76);;
+  border-radius: 50%;
+  margin: 0px;
+  -webkit-app-region: no-drag;
+  background-image: unset;
+  margin-left: 10px;
+  position: absolute;
+  right: 29px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+body .app-chrome .app-chrome-item > .window-controls > div.close {
+  height: 12px;
+  width: 12px;
+  background-color: rgb(255, 92, 92);
+  border-radius: 50%;
+  margin: 0px;
+  -webkit-app-region: no-drag;
+  background-image: unset;
+  margin-left: 10px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#window-controls-container{
+  position: relative !important;
+}
+
+@media (prefers-color-scheme: light) {
+.usermenu-container .usermenu-body{
+  background: #eee !important;
+  .usermenu-item{
+    color: #333;
+     svg {
+      color: #d60017;
+    }
+  }
+}
+.search-input-container {
+  .search-input--icon {
+    filter: invert(1);
+    z-index: 1;
+  }
+  .search-input {
+    color: var(--textColor);
+    background: #eee;
+    mix-blend-mode: unset;
+    filter: unset;
+  }
+}
+.menu-panel .menu-panel-body {
+  background: #eee;
+}
+
+.search-hints-container .search-hints {
+  background: rgba(240, 240, 240, 0.95);
+  .search-hint {
+    color: #333;
+  }
+}
+
+}
+
+@media (prefers-color-scheme: dark) {
+  #app{
+  --textColor: whitesmoke;
+  color: var(--textColor);
+  }
+  .usermenu-container .usermenu-body{
+    .usermenu-item{
+      color: white;
+       svg {
+        color: #d60017;
+      }
+    }
+  }
+  .menu-panel .menu-panel-body {
+    background: black;
+  }
+  #app-main{
+    background: #1f1f1f;
+    .app-chrome{
+      background: unset;
+    }
+    .md-btn, .md-select {
+      color: whitesmoke;
+    
+      &:not(.md-btn-primary) {
+        background: #333;
+        border: 1px solid rgb(100 100 100 / 20%);
+      }
+    
+      .md-ico-remove {
+        filter: invert(0);
+      }
+    
+      .md-ico-add {
+        filter: invert(0);
+      }
+    
+      > option, > optgroup, optgroup > option {
+        background: #333;
+      }
+    
+    
+    }
+  
+    .playback-button,.playback-button--small,.volume-button--small, .app-chrome-item>input[type="range"] {
+      filter: invert(0);
+    }
+    .artist-page {
+      .artist-title {
+        color: var(--textColor);
+      }
+  
+      .floating-header {
+        background: unset;
+        color: var(--textColor);
+      }
+    }
+  
+    .playlist-page {
+      .floating-header {
+        background: unset;
+        color: var(--textColor);
+      }
+    }
+    #navigation-bar{
+      background: unset;
+    }
+
+    .playlist-page.inline-playlist .playlist-inner {
+      background: rgb(29, 29, 29);
+  
+      .floating-header {
+        background: unset;
+      }
+    }
+
+    .app-chrome .app-chrome-item > .app-playback-controls {
+      border: solid darkgray;
+      border-width: 0px;
+      background: rgb(83, 82, 82);
+      .artwork{
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-top: 0px;
+        border-radius: 0px;
+        .mediaitem-artwork{
+          border-radius: 0px;
+        }
+      }
+      .song-progress{
+        bottom : -4px;
+      }}
+  }
+  .app-navigation{
+    #app-content{
+      background: #1f1f1f !important;
+    }
+  }
+
+  .app-chrome .app-chrome-item.volume input[type="range"] {
+    filter: invert(0) !important;
+    background-color: rgba(255, 255, 255, 0.4);
+    &::-webkit-slider-thumb{
+      display: none;
+      background: transparent !important;
+    }  
+  }
+  .app-chrome .app-chrome-item.volume button {
+    filter: invert(0);
+  }
+  .app-chrome .app-chrome-item > .app-mainmenu {
+    filter: invert(1);
+  }
+
+  .cd-mediaitem-list-item:nth-child(odd){
+    background: rgb(255 255 255 / 0.015);
+  }
+
+  
+}
+
