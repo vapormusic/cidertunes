@@ -170,10 +170,17 @@
 
 
   .app-drawer {
-    background: #eee;
     color: var(--textColor);
+    height: 100%;
+    border-radius: 0;
+    right: 0;
+    top:0%;
+    position: absolute;   
   }
 
+  .modular-fs .app-drawer{
+    position: absolute;
+  }
   .lyric-line {
     color: #333;
   }
@@ -320,6 +327,12 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
   background: rgba(240, 240, 240, 0.95);
   .search-hint {
     color: #333;
+  }
+}
+#app-main .app-drawer{
+  background: whitesmoke;
+  .lyric-footer{
+    background: rgba(30, 30, 30, 0.2);
   }
 }
 
