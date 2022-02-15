@@ -95,13 +95,13 @@
   }
 
   .app-chrome .app-chrome-item > .app-playback-controls {
-    border: solid darkgray;
-    border-width: 1.5px;
+    // border: solid darkgray;
+    border-width: 0px;
     .artwork{
       width: 55px;
       height: 55px;
       margin-left: 0px;
-      margin-right: 0px;
+      margin-right: -2.25px;
       margin-bottom: 0px;
       margin-top: 0px;
       border-radius: 0px;
@@ -251,8 +251,8 @@ body .app-chrome .app-chrome-item > .window-controls > div.minmax {
   right: 49px;
   top: 50%;
   transform: translate(0, -50%);
-  .restore{
-    background-image: unset;
+  &.restore{
+    background-image: unset !important;
   }
 }
 
@@ -407,7 +407,7 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
       background: rgb(83, 82, 82);
       .artwork{
         margin-left: 0px;
-        margin-right: 0px;
+        margin-right: -1px;
         margin-bottom: 0px;
         margin-top: 0px;
         border-radius: 0px;
