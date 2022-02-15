@@ -115,6 +115,11 @@
       z-index: 30;
       input[type="range"]{
         border-radius: 0px;
+          // &::-webkit-slider-thumb{
+          // z-index: 30;
+          // display: flex;
+          // overflow: visible;
+          // } 
       }
       .song-duration{
         margin-left: 2px;
@@ -442,11 +447,8 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
   .app-chrome .app-chrome-item.volume input[type="range"] {
     filter: invert(0) !important;
     background-color: rgba(255, 255, 255, 0.4);
-    &::-webkit-slider-thumb{
-      display: none;
-      background: transparent !important;
-    }  
   }
+
   .app-chrome .app-chrome-item.volume button {
     filter: invert(0);
   }
