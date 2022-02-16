@@ -345,6 +345,14 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
 
 }
 
+.cd-mediaitem-list-item .title {
+  width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
 @media (prefers-color-scheme: dark) {
   #app{
   --textColor: whitesmoke;
@@ -461,6 +469,13 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
     background: rgb(255 255 255 / 0.015);
   }
 
+
+
   
 }
 
+input[type=checkbox][switch]:checked {
+    background: #d60017;
+    border: 0 solid #d60017;
+    mix-blend-mode: unset;
+}
