@@ -93,6 +93,9 @@
     border: 0px;
     border-bottom: rgba(0,0,0,0.2) 1px;
     border-style: solid;
+    .app-chrome--center {
+      width: 40%;
+    }
   }
 
   .app-chrome .app-chrome-item > .app-playback-controls {
@@ -124,8 +127,23 @@
       }
       .song-duration{
         margin-left: 2px;
-        margin-right: 2px;}
-    }  
+        margin-right: 2px;
+      }
+    }
+    .song-name{
+      max-width: unset;
+      width: 100%;
+      padding-left: 0.5%;
+      padding-right: 1%;
+    }
+    >div > .song-artist-album{
+        width: 98%;
+        max-width: unset;
+        .song-artist-album-content{
+          font-size: 13px;
+        }
+    }
+
     .actions{
       display: none;
     }
@@ -383,11 +401,11 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
       }
     
       .md-ico-remove {
-        filter: invert(0);
+        filter: unset;
       }
     
       .md-ico-add {
-        filter: invert(0);
+        filter: unset;
       }
     
       > option, > optgroup, optgroup > option {
@@ -398,7 +416,7 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
     }
   
     .playback-button,.playback-button--small,.volume-button--small, .app-chrome-item>input[type="range"] {
-      filter: invert(0);
+      filter: unset;
     }
     .artist-page {
       .artist-title {
@@ -406,14 +424,14 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
       }
   
       .floating-header {
-        background: unset;
+        background: rgba(0,0,0,0.25);
         color: var(--textColor);
       }
     }
   
     .playlist-page {
       .floating-header {
-        background: unset;
+        background: rgba(0,0,0,0.25);
         color: var(--textColor);
       }
     }
@@ -425,7 +443,8 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
       background: rgb(29, 29, 29);
   
       .floating-header {
-        background: unset;
+        background:  rgba(0,0,0,0.3);
+        backdrop-filter: blur(32px);
       }
     }
 
@@ -454,12 +473,12 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
   }
 
   .app-chrome .app-chrome-item.volume input[type="range"] {
-    filter: invert(0) !important;
+    filter: unset !important;
     background-color: rgba(255, 255, 255, 0.4);
   }
 
   .app-chrome .app-chrome-item.volume button {
-    filter: invert(0);
+    filter: unset;
   }
   .app-chrome .app-chrome-item > .app-mainmenu {
     filter: invert(1);
@@ -478,4 +497,16 @@ input[type=checkbox][switch]:checked {
     background: #d60017;
     border: 0 solid #d60017;
     mix-blend-mode: unset;
+}
+
+.marquee {
+  animation-duration: 25s;
+}
+
+.playback-button.next , .playback-button.previous {
+  background-size: 46%;
+}  
+
+.playback-button.play, .playback-button.pause {
+  background-size: 51%;
 }
