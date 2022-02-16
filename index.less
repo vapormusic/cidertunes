@@ -73,7 +73,7 @@
     mix-blend-mode: unset;
 
     .nav-item > svg {
-      color: #d60017;
+      color: #fa586a;
     }
   }
 
@@ -85,7 +85,7 @@
     }
 
     .sidebar-icon > svg {
-      color: #d60017;
+      color: #fa586a;
     }
   }
   .app-chrome{
@@ -325,7 +325,13 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
   .usermenu-item{
     color: #333;
      svg {
-      color: #d60017;
+      color: #fa586a;
+    }
+    &:hover{
+      background: #fa586a;
+      svg {
+        color: whitesmoke;
+      }
     }
   }
 }
@@ -349,6 +355,9 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
   background: rgba(240, 240, 240, 0.95);
   .search-hint {
     color: #333;
+    &:hover{
+      background: #fa586a;
+    }
   }
 }
 #app-main .app-drawer{
@@ -380,7 +389,13 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
     .usermenu-item{
       color: white;
        svg {
-        color: #d60017;
+        color: #fa586a;
+      }
+      &:hover{
+        background: #fa586a;
+        svg {
+          color: whitesmoke;
+        }
       }
     }
   }
@@ -488,14 +503,21 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
     background: rgb(255 255 255 / 0.015);
   }
 
+  .search-hints-container .search-hints {
+    .search-hint {
+      &:hover{
+        background: #fa586a;
+      }
+    }
+  }
 
 
   
 }
 
 input[type=checkbox][switch]:checked {
-    background: #d60017;
-    border: 0 solid #d60017;
+    background: #fa586a;
+    border: 0 solid #fa586a;
     mix-blend-mode: unset;
 }
 
