@@ -324,59 +324,59 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
 
 @media (prefers-color-scheme: light) {
 
-.usermenu-container .usermenu-body{
-  background: #eee !important;
-  .usermenu-item{
-    color: #333;
-     svg {
-      color: #fa586a;
-    }
-    &:hover{
-      background: #fa586a;
+  .usermenu-container .usermenu-body{
+    background: #eee !important;
+    .usermenu-item{
+      color: #333;
       svg {
-        color: whitesmoke;
+        color: #fa586a;
+      }
+      &:hover{
+        background: #fa586a;
+        svg {
+          color: whitesmoke;
+        }
+      }
+    }
+    
+    .app-sidebar-button {
+      background: var(--keyColor);
+    }
+  }
+  .search-input-container {
+    .search-input--icon {
+      filter: invert(1);
+      z-index: 1;
+    }
+    .search-input {
+      color: var(--textColor);
+      background: #eee;
+      mix-blend-mode: unset;
+      filter: unset;
+    }
+  }
+  .menu-panel .menu-panel-body {
+    background: #eee;
+  }
+
+  .search-hints-container .search-hints {
+    background: rgba(240, 240, 240, 0.95);
+    .search-hint {
+      color: #333;
+      &:hover{
+        background: #fa586a;
       }
     }
   }
-  
-  .app-sidebar-button {
-    background: var(--keyColor);
-  }
-}
-.search-input-container {
-  .search-input--icon {
-    filter: invert(1);
-    z-index: 1;
-  }
-  .search-input {
-    color: var(--textColor);
-    background: #eee;
-    mix-blend-mode: unset;
-    filter: unset;
-  }
-}
-.menu-panel .menu-panel-body {
-  background: #eee;
-}
-
-.search-hints-container .search-hints {
-  background: rgba(240, 240, 240, 0.95);
-  .search-hint {
-    color: #333;
-    &:hover{
-      background: #fa586a;
+  #app-main .app-drawer{
+    background: whitesmoke;
+    .lyric-footer{
+      background: rgba(30, 30, 30, 0.2);
+    }
+    .lyric-line {
+      color: #333;
     }
   }
-}
-#app-main .app-drawer{
-  background: whitesmoke;
-  .lyric-footer{
-    background: rgba(30, 30, 30, 0.2);
-  }
-  .lyric-line {
-    color: #333;
-  }
-}
 
 }
 
@@ -407,6 +407,9 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
           color: whitesmoke;
         }
       }
+    }
+    .app-sidebar-button {
+      background: #333;
     }
   }
   .menu-panel .menu-panel-body {
