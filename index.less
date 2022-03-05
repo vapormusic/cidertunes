@@ -9,7 +9,7 @@
   &.simplebg {
     background: #eeeeee86;
     box-shadow: inset 0 0 2000px rgb(255 255 255 / 50%);
-    backdrop-filter: blur(8px);
+    // backdrop-filter: blur(8px);
         box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
         background-color: rgb(228 228 228 / 15%);
   }
@@ -132,6 +132,7 @@ body{
     .song-progress{
       bottom: -4px;
       right: 1px;
+      left: 2.5px;
       z-index: 30;
       input[type="range"]{
         border-radius: 0px;
@@ -341,6 +342,24 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
 
 @media (prefers-color-scheme: light) {
 
+  #app.simplebg::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.5;
+    z-index: 0;
+    background-image: url(data:image/png;base64,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);
+    filter: blur(50px);
+    backdrop-filter: blur(123px);
+    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
+    background-color: rgb(228 228 228 / 55%);
+  }
+
   .usermenu-container .usermenu-body{
     background: #eee !important;
     .usermenu-item{
@@ -362,7 +381,7 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
   }
 
   #app-sidebar{
-    background-color: #fafafa6e;
+    background-color: #e7e4e4b5;
   }
 
   .search-input-container {
@@ -399,7 +418,9 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
       color: #333;
     }
   }
-
+  // #app-main .app-sidebar-item {
+  //   color: whitesmoke;
+  // }
   .app-chrome .app-chrome-item.playback-controls{
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9IiM0ZDRkNGQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyNCIgdmVyc2lvbj0iMS4xIiB2aWV3Qm94PSIwIDAgMjAgMjQiIGNsYXNzPSJ3ZWItY2hyb21lLXBsYXliYWNrLWxjZF9fbG9nbyIgYXJpYS1oaWRkZW49InRydWUiPjxwYXRoIGZpbGwtcnVsZT0ibm9uemVybyIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGQ9Ik0xNC41NDk4MzMxLDUuNzkwNTU1NzYgTDE0Ljg2NjczNDYsNS43OTgyNDA3MyBDMTUuNjUxOTI3MSw1Ljg1NzUzODk1IDE3LjkxNjc4NTIsNi4wOTM1NDQ1MiAxOS4zNjYzMDgzLDguMTg2NTgyNTkgQzE5LjI0NTQ5OTIsOC4yNzYxOTAyIDE2LjY3ODYzODUsOS43MjExNTE4OCAxNi43MDkxMzc4LDEyLjc1ODk4NzYgQzE2LjczOTA5MTEsMTYuMzg3MDU1MyAxOS45Njk2NjgyLDE3LjU5NzAwNzkgMjAsMTcuNjI2NTA4NiBDMTkuOTY5NjY4MiwxNy43MTU1ODMyIDE5LjQ4NzQ5OSwxOS4zMzgxNTc4IDE4LjMwOTY0MDUsMjEuMDE4NTczOCBDMTcuMjgyOTIyOSwyMi40OTQxMjM1IDE2LjIyNTY4NzMsMjMuOTM5NDU0NyAxNC41MzQ1OTI1LDIzLjk2ODk3MzYgQzEyLjkwMzg3MjgsMjMuOTk4NDc0MyAxMi4zNTk5Njk3LDIzLjAyNDYxODEgMTAuNDg4Nzk4MywyMy4wMjQ2MTgxIEM4LjYxNjI0OTQyLDIzLjAyNDYxODEgOC4wMTI0MzY1OCwyMy45Mzk0NTQ3IDYuNDcxOTM2NjgsMjMuOTk4NDc0MyBDNC44NDE0ODA2OCwyNC4wNTY3NzMgMy42MDQwOTQwMywyMi40MzM2NjUzIDIuNTc3MzU3ODEsMjAuOTU5NTUxMiBDMC40NjMwOTQ1NTQsMTcuOTc5OTI2NCAtMS4xMzczMTE5NiwxMi41NTMxMjQ4IDEuMDM2ODU3OTEsOC44OTQ2NTM4MiBDMi4wOTM5MDczMyw3LjA2NTg3MTEyIDQuMDI2NzE5NTksNS45MTYwMjU0NCA2LjEwOTc0ODI1LDUuODg2MTU1MjMgQzcuNzEwMTU0NzcsNS44NTc1Mzg5NSA5LjE4OTg0NTI1LDYuOTE5Mzk3NDQgMTAuMTU2NjU2Miw2LjkxOTM5NzQ0IEMxMS4xMjI5Mzk4LDYuOTE5Mzk3NDQgMTIuODQzMzI3MSw1LjY4MDU3MTEyIDE0Ljg2NjczNDYsNS43OTgyNDA3MyBaIE0xNC44ODI1NjksLTEuNTA5OTAzMzFlLTE0IEMxNS4wMzQzMTgsMS40MjA2MzQyMSAxNC40NTg5NDc2LDIuODEwODU2MDQgMTMuNjExMDU5NSwzLjg0NjIzNjU5IEMxMi43MzI1ODgzLDQuODUyNTcwNzcgMTEuMzQwNTc2OCw1LjY1MDQ3OTggOS45NDcyNzc3OSw1LjUzMjQ4MzA3IEM5Ljc2NTYwNjUzLDQuMTcxNDAxNTEgMTAuNDYyNDg0MSwyLjcyMjk3Nzg5IDExLjI0OTg0NTEsMS44MzU2MzY5MiBDMTIuMTI2NzQ2NSwwLjc5OTQ0NDY0MyAxMy42NDEzNzg5LDAuMDYwMjU1MzIzOSAxNC44ODI1NjksLTEuNTA5OTAzMzFlLTE0IFoiPjwvcGF0aD48L3N2Zz4=");
     background-repeat: no-repeat;
@@ -424,6 +445,24 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
 
   color: var(--textColor);
   background : rgba(30,30,30,0.7) !important;
+  }
+
+  #app.simplebg::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: inherit;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0.5;
+    z-index: 0;
+    background-image: url(data:image/png;base64,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);
+    filter: blur(50px);
+    backdrop-filter: blur(123px);
+    box-shadow: 0px 10px 15px 10px rgb(0 0 0 / 15%);
+    background-color: rgb(0 0 0 / 55%);
   }
 
   #app-main{
@@ -452,6 +491,9 @@ body .app-chrome .app-chrome-item > .window-controls > div.close {
   }
   .menu-panel .menu-panel-body {
     background: black;
+  }
+  #app-sidebar::before{
+    background: #fff;
   }
   #app-main{
     background: #1f1f1f;
